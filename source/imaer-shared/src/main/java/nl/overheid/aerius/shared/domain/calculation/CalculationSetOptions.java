@@ -33,6 +33,7 @@ public class CalculationSetOptions implements Serializable {
 
   private int calculationSetOptionsId;
   private CalculationMethod calculationMethod = CalculationMethod.PERMIT;
+  private CalculationJobType calculationJobType = CalculationJobType.PROCESS_CONTRIBUTION;
   private double calculateMaximumRange;
   private final ArrayList<Substance> substances = new ArrayList<>();
   private final Set<EmissionResultKey> emissionResultKeys = new HashSet<>();
@@ -61,6 +62,14 @@ public class CalculationSetOptions implements Serializable {
 
   public void setCalculationMethod(final CalculationMethod calculationMethod) {
     this.calculationMethod = calculationMethod;
+  }
+
+  public CalculationJobType getCalculationJobType() {
+    return calculationJobType;
+  }
+
+  public void setCalculationJobType(CalculationJobType calculationJobType) {
+    this.calculationJobType = calculationJobType;
   }
 
   public ArrayList<Substance> getSubstances() {
@@ -139,8 +148,9 @@ public class CalculationSetOptions implements Serializable {
   @Override
   public String toString() {
     return "CalculationSetOptions [calculationSetOptionsId=" + calculationSetOptionsId + ", calculationMethod=" + calculationMethod
-        + ", calculateMaximumRange=" + calculateMaximumRange + ", substances=" + substances + ", emissionResultKeys=" + emissionResultKeys
-        + ", stacking=" + stacking + ", connectSuppliedOptions=" + connectSuppliedOptions + ", wnbCalculationOptions=" + wnbCalculationOptions
-        + ", rblCalculationOptions=" + rblCalculationOptions + ", ncaCalculationOptions=" + ncaCalculationOptions + "]";
+        + ", calculationJobType=" + calculationJobType + ", calculateMaximumRange=" + calculateMaximumRange + ", substances=" + substances
+        + ", emissionResultKeys=" + emissionResultKeys + ", stacking=" + stacking + ", connectSuppliedOptions=" + connectSuppliedOptions
+        + ", wnbCalculationOptions=" + wnbCalculationOptions + ", rblCalculationOptions=" + rblCalculationOptions + ", ncaCalculationOptions="
+        + ncaCalculationOptions + "]";
   }
 }
